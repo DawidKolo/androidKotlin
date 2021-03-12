@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <Transition
+        app:constraintSetEnd="@layout/end_layout"
+        app:constraintSetStart="@layout/start_layout"
+        app:duration="1000"
+        >
+        <OnSwipe
+            app:touchAnchorId="@id/textViewSimple"
+            app:touchAnchorSide="bottom"
+            app:dragDirection="dragDown"
+            />
+    </Transition>
+
+</MotionScene>
