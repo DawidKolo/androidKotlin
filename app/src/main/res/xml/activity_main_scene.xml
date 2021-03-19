@@ -2,18 +2,92 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@id/end">
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:alpha="2.0"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.662" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.662"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.889" />
+    </ConstraintSet>
+
+
 
 
     <Transition
-        app:constraintSetEnd="@layout/end_layout"
-        app:constraintSetStart="@layout/start_layout"
-        app:duration="1000"
+        app:constraintSetEnd="@id/start"
+        app:constraintSetStart="@id/end"
+        app:duration="5000"
         >
         <OnSwipe
-            app:touchAnchorId="@id/textViewSimple"
+            app:touchAnchorId="@id/imageView"
             app:touchAnchorSide="bottom"
-            app:dragDirection="dragDown"
-            />
+            app:dragDirection="dragDown"/>
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="2.0"
+                android:scaleY="2.0"
+                app:motionTarget="@id/imageView"
+                app:framePosition="0">
+
+            </KeyAttribute>
+            <KeyAttribute
+                android:scaleX="2.0"
+                android:scaleY="2.0"
+                app:motionTarget="@id/imageView2"
+                app:framePosition="0">
+            </KeyAttribute>
+            <KeyPosition
+                app:keyPositionType="parentRelative"
+                app:framePosition="0">
+            </KeyPosition>
+
+        </KeyFrameSet>
+
     </Transition>
 
 </MotionScene>

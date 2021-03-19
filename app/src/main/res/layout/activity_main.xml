@@ -6,16 +6,28 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    app:layoutDescription="@xml/activity_main_scene">
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewSimple"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50"
+        app:srcCompat="@drawable/cat_body" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cat_eyes"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="624dp" />
+
+
 </androidx.constraintlayout.motion.widget.MotionLayout>
